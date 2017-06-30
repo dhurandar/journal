@@ -1,8 +1,8 @@
-package com.intuit.journal.kafka;
+package com.journal.kafka;
 
-import com.intuit.journal.LogRecord;
-import com.intuit.journal.Writer;
-import com.intuit.journal.AtomicBatch;
+import com.journal.LogRecord;
+import com.journal.Writer;
+import com.journal.AtomicBatch;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
@@ -21,8 +21,8 @@ public class KafkaWriter implements Writer<AtomicBatch<LogRecord>> {
     public KafkaWriter () {
         //TODO: NOT GOOD now , Really important to get these from property files.
         kafkaProps.put("bootstrap.servers", "broker1:9092,broker2:9092");
-        //kafkaProps.put("key.serializer",  "com.intuit.journal.serializer.json.SimpleJsonSerializer");
-        kafkaProps.put("value.serializer", "com.intuit.journal.serializer.json.SimpleJsonSerializer");
+        //kafkaProps.put("key.serializer",  "SimpleJsonSerializer");
+        kafkaProps.put("value.serializer", "SimpleJsonSerializer");
         producer = new KafkaProducer<String, String>(kafkaProps);
     }
 

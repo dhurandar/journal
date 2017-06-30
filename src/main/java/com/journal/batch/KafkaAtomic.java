@@ -1,14 +1,12 @@
-package com.intuit.journal.batch;
+package com.journal.batch;
 
-import com.intuit.journal.AtomicBatch;
-import com.intuit.journal.LogRecord;
-import com.intuit.journal.Token;
+import com.journal.AtomicBatch;
+import com.journal.LogRecord;
+import com.journal.Token;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**

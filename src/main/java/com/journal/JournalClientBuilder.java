@@ -1,4 +1,4 @@
-package com.intuit.journal;
+package com.journal;
 
 import com.google.common.base.Preconditions;
 
@@ -58,7 +58,7 @@ public final class JournalClientBuilder {
     }
 
     /**
-     * com.intuit.journal.Partitioner to decide on how to partition the Keys.
+     * Partitioner to decide on how to partition the Keys.
      * If none supplied default partition is used to partition the
      * Data.
      *
@@ -73,9 +73,9 @@ public final class JournalClientBuilder {
     }
 
     /**
-     * Build com.intuit.journal.JournalClient client.
+     * Build JournalClient client.
      *
-     * @return com.intuit.journal.JournalClient client.
+     * @return JournalClient client.
      */
     public JournalClientImpl build() {
         return buildClient();

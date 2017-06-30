@@ -1,15 +1,15 @@
-package com.intuit.journal.kafka;
+package com.journal.kafka;
 
-import com.intuit.journal.LogRecord;
-import com.intuit.journal.Reader;
-import com.intuit.journal.AtomicBatch;
+import com.journal.LogRecord;
+import com.journal.Reader;
+import com.journal.AtomicBatch;
 
 import java.io.IOException;
 
 /**
  * Created by rsingh13
  */
-public class KafkaReader implements Reader{
+public class KafkaReader implements Reader {
     /**
      * Read the next <i>KafkaAtomic</i> log records from the stream
      *

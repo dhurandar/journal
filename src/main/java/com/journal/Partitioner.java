@@ -1,7 +1,7 @@
-package com.intuit.journal;
+package com.journal;
 
 /**
- * com.intuit.journal.Partitioner
+ * Partitioner
  * Created by rsingh13
  * If 1 wants to partition journal writes based on source keys
  *

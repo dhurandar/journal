@@ -1,4 +1,4 @@
-package com.intuit.journal;
+package com.journal;
 
 import java.io.Closeable;
 import java.io.Serializable;
@@ -9,7 +9,7 @@ import java.io.Serializable;
 public interface JournalClient extends Closeable,Serializable{
 
     /**
-     * Write <i>com.intuit.journal.LogRecord</i> in batch to current <i>journal</i>. Return a
+     * Write <i>LogRecord</i> in batch to current <i>journal</i>. Return a
      * Future with transactionID, one for each submitted record.
      *
      * If there is 1 LogRecord to write , pass Set with size 1.
@@ -19,7 +19,7 @@ public interface JournalClient extends Closeable,Serializable{
      * will also fail.
      *
      * @param LogRecord
-     *          com.intuit.journal.LogRecord to write.
+     *          LogRecord to write.
      * @return a list of futures, one for each submitted record.
      */
     Token write(AtomicBatch<LogRecord> LogRecord);

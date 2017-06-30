@@ -1,4 +1,4 @@
-package com.intuit.journal.serializer.json;
+package com.journal.serializer.json;
 
 /**
  *  Any exception during serialization in the producer

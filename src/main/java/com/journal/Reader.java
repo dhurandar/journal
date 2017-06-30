@@ -1,4 +1,4 @@
-package com.intuit.journal;
+package com.journal;
 
 import java.io.Closeable;
 import java.io.IOException;

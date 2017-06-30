@@ -1,7 +1,7 @@
-package com.intuit.journal;
+package com.journal;
 
 import com.google.common.base.Preconditions;
-import com.intuit.journal.util.UUIDs;
+import com.journal.util.UUIDs;
 
 import java.util.UUID;
 

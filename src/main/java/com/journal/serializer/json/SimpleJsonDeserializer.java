@@ -1,4 +1,4 @@
-package com.intuit.journal.serializer.json;
+package com.journal.serializer.json;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

@@ -1,7 +1,4 @@
-package com.intuit.journal;
-
-import com.intuit.journal.LogRecord;
-import com.intuit.journal.Token;
+package com.journal;
 
 import java.util.Iterator;
 

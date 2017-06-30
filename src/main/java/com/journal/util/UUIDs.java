@@ -1,4 +1,4 @@
-package com.intuit.journal.util;
+package com.journal.util;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;

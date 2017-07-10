@@ -1,0 +1,17 @@
+/Users/rsingh13/personal/journal/journal/core/src/main/java/example/AtomicWrites.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/kafka/KafkaWriter.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/kafka/KafkaReader.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/JournalClientBuilder.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/batch/KafkaAtomic.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/JournalClient.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/serializer/json/SimpleJsonDeserializer.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/serializer/json/SerializationException.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/util/UUIDs.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/Token.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/serializer/json/SimpleJsonSerializer.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/Writer.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/metadata/MetadataStorageService.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/Partitioner.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/AtomicBatch.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/LogRecord.java
+/Users/rsingh13/personal/journal/journal/core/src/main/java/com/journal/Reader.java

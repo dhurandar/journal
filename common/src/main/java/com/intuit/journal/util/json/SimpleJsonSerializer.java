@@ -1,9 +1,7 @@
-package com.journal.serializer.json;
+package com.intuit.journal.util.json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import io.confluent.kafka.serializers.KafkaJsonSerializerConfig;
-import org.apache.kafka.common.errors.SerializationException;
 
 /**
  * Serialize objects to UTF-8 JSON. This works with any object which is serializable with Jackson.
@@ -14,7 +12,7 @@ public class SimpleJsonSerializer<T>{
   private ObjectMapper objectMapper;
 
   /**
-   * Default constructor needed by Kafka
+   * Default constructor
    */
   public SimpleJsonSerializer() {
 
@@ -27,7 +25,7 @@ public class SimpleJsonSerializer<T>{
     this.objectMapper.configure(SerializationFeature.INDENT_OUTPUT, prettyPrint);
   }
 
-  public byte[] serialize(T data) {
+  public byte[] serialize(T data) throws  SerializationException{
     if (data == null) {
       return null;
     }

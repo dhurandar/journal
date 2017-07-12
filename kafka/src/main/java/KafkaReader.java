@@ -1,16 +1,20 @@
-import com.journal.AtomicBatch;
-import com.journal.Writer;
+import com.intuit.journal.api.Reader;
 
 import java.io.IOException;
-import java.util.concurrent.Future;
 
 /**
  * Created by rsingh13.
  */
-public class TransactionalJavaProducer implements Writer<AtomicBatch>{
-
+public class KafkaReader implements Reader{
+    /**
+     * Read the next <i>KafkaAtomic</i> log records from the stream
+     *
+     * @param nonBlocking
+     * @return an operation from the stream or empty list if at end of stream
+     * @throws IOException if there is an error reading from the stream
+     */
     @Override
-    public Future<AtomicBatch> write(AtomicBatch atomicBatch) {
+    public Object readBatch(boolean nonBlocking) throws IOException {
         return null;
     }
 
@@ -31,5 +35,4 @@ public class TransactionalJavaProducer implements Writer<AtomicBatch>{
     public void close() throws IOException {
 
     }
-}
 }

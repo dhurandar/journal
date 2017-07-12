@@ -1,4 +1,4 @@
-package com.intuit.journal.api;
+package com.journal.dto;
 
 import java.io.Serializable;
 
@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * Log record is the basic element in a log.
  * <p>
  * TODO: Need to implement clone , readExternal and writeExternal method.
- * Created by rsingh13 on 5/26/17.
+ * Created by rsingh13
  */
 
 

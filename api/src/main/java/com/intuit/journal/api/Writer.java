@@ -4,8 +4,9 @@ import java.io.Closeable;
 import java.util.concurrent.Future;
 
 /**
- * Created by rsingh13 on 6/9/17.
+ * Created by rsingh13
+ * Writer interface to write to Journal
  */
-public interface Writer<V> extends Closeable{
-    public Future<V> write(V v);
+public interface Writer extends Closeable{
+    public Future<AtomicBatchMetadata> write(AtomicBatch payload);
 }

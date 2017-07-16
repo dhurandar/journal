@@ -5,20 +5,18 @@ import java.util.Iterator;
 /**
  * Created by rsingh13
  */
-public interface AtomicBatch<T> {
+public interface AtomicBatch {
     Token Id();
 
     int size();
 
     boolean isEmpty();
 
-    boolean contains(Object o);
+    boolean contains(LogRecord o);
 
-    Iterator<T> iterator();
+    Iterator<LogRecord> iterator();
 
-    boolean add(T logRecord);
+    void add(LogRecord logRecord);
 
-    LogRecord remove(T logRecord);
-
-    void serialize();
+    LogRecord remove(LogRecord logRecord);
 }

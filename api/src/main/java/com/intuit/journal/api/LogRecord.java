@@ -1,4 +1,4 @@
-package com.journal.dto;
+package com.intuit.journal.api;
 
 import java.io.Serializable;
 
@@ -20,6 +20,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+        "id",
         "attribute",
         "clientID",
         "clientTimestamp",
@@ -31,6 +32,15 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
         "value"
 })
 public class LogRecord implements Serializable {
+
+
+    /**
+     * ID for an entity or relationship being changed
+     * (Required)
+     */
+    @JsonProperty("id")
+    @JsonPropertyDescription("name of the attribute being changed")
+    private String id;
 
     /**
      * name of the attribute being changed
@@ -113,9 +123,10 @@ public class LogRecord implements Serializable {
      * @param tid
      * @param type
      */
-    public LogRecord(String attribute, String clientID, long clientTimestamp, long op, String tid, long timestamp,
+    public LogRecord(String id,String attribute, String clientID, long clientTimestamp, long op, String tid, long timestamp,
                      long type, String userContext, String value) {
         super();
+        this.id = id;
         this.attribute = attribute;
         this.clientID = clientID;
         this.clientTimestamp = clientTimestamp;
@@ -126,6 +137,26 @@ public class LogRecord implements Serializable {
         this.userContext = userContext;
         this.value = value;
     }
+
+    /**
+     * ID of the entity or relationship which is changed.
+     * @return
+     */
+    @JsonProperty("id")
+    public String getId() {
+        return id;
+    }
+
+
+    /**
+     * ID of the entity or relationship which is changed.
+     * @return
+     */
+    @JsonProperty("id")
+    public void setId(String id) {
+        this.id = id;
+    }
+
 
     /**
      * name of the attribute being changed
@@ -143,11 +174,6 @@ public class LogRecord implements Serializable {
     @JsonProperty("attribute")
     public void setAttribute(String attribute) {
         this.attribute = attribute;
-    }
-
-    public LogRecord withAttribute(String attribute) {
-        this.attribute = attribute;
-        return this;
     }
 
     /**
@@ -168,11 +194,6 @@ public class LogRecord implements Serializable {
         this.clientID = clientID;
     }
 
-    public LogRecord withClientID(String clientID) {
-        this.clientID = clientID;
-        return this;
-    }
-
     /**
      * client timestamp , timestamp at which fact happened in client user space
      * (Required)
@@ -189,11 +210,6 @@ public class LogRecord implements Serializable {
     @JsonProperty("clientTimestamp")
     public void setClientTimestamp(long clientTimestamp) {
         this.clientTimestamp = clientTimestamp;
-    }
-
-    public LogRecord withClientTimestamp(long clientTimestamp) {
-        this.clientTimestamp = clientTimestamp;
-        return this;
     }
 
     /**
@@ -214,11 +230,6 @@ public class LogRecord implements Serializable {
         this.op = op;
     }
 
-    public LogRecord withOp(long op) {
-        this.op = op;
-        return this;
-    }
-
     /**
      * Id which uniquely identifies the current batch of mutations
      * (Required)
@@ -235,11 +246,6 @@ public class LogRecord implements Serializable {
     @JsonProperty("tid")
     public void setTid(String tid) {
         this.tid = tid;
-    }
-
-    public LogRecord withTid(String tid) {
-        this.tid = tid;
-        return this;
     }
 
     /**
@@ -260,10 +266,6 @@ public class LogRecord implements Serializable {
         this.timestamp = timestamp;
     }
 
-    public LogRecord withTimestamp(long timestamp) {
-        this.timestamp = timestamp;
-        return this;
-    }
 
     /**
      * Entity or Relationship (Are changes to entities or relationship) Value can be 0 or 1
@@ -283,11 +285,6 @@ public class LogRecord implements Serializable {
         this.type = type;
     }
 
-    public LogRecord withType(long type) {
-        this.type = type;
-        return this;
-    }
-
     /**
      * User Context information
      */
@@ -302,11 +299,6 @@ public class LogRecord implements Serializable {
     @JsonProperty("userContext")
     public void setUserContext(String userContext) {
         this.userContext = userContext;
-    }
-
-    public LogRecord withUserContext(String userContext) {
-        this.userContext = userContext;
-        return this;
     }
 
     /**
@@ -327,10 +319,6 @@ public class LogRecord implements Serializable {
         this.value = value;
     }
 
-    public LogRecord withValue(String value) {
-        this.value = value;
-        return this;
-    }
 
     @Override
     public String toString() {
@@ -340,6 +328,7 @@ public class LogRecord implements Serializable {
     @Override
     public int hashCode() {
         return new HashCodeBuilder()
+                .append( id )
                 .append( attribute )
                 .append( clientID )
                 .append( clientTimestamp )
@@ -360,7 +349,7 @@ public class LogRecord implements Serializable {
             return false;
         }
         LogRecord rhs = ((LogRecord) other);
-        return new EqualsBuilder().append( attribute, rhs.attribute ).
+        return new EqualsBuilder().append( id,rhs.id ).append( attribute, rhs.attribute ).
                 append( clientID, rhs.clientID ).
                                           append( clientTimestamp, rhs.clientTimestamp ).
                                           append( op, rhs.op ).append( tid, rhs.tid ).

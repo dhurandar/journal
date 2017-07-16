@@ -12,7 +12,17 @@
         <module>core</module>
         <module>kafka</module>
         <module>api</module>
+        <module>JPartitioner</module>
+        <module>common</module>
+        <module>ast2journal</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>journal</groupId>
+            <artifactId>journal.api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

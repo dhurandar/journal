@@ -1,8 +1,8 @@
 package com.journal;
 
 import com.google.common.base.Preconditions;
+import com.intuit.journal.api.AtomicBatch;
 import com.intuit.journal.api.LogRecord;
-import com.intuit.journal.api.Partitioner;
 import com.intuit.journal.api.Token;
 
 /**
@@ -12,7 +12,6 @@ public final class JournalClientBuilder {
 
     private String _name = null;
     private String _clientId = null;
-    private Partitioner _partitioner = null;
 
     /**
      * Create a client builder
@@ -27,7 +26,6 @@ public final class JournalClientBuilder {
         JournalClientBuilder newBuilder = new JournalClientBuilder();
         newBuilder._name = builder._name;
         newBuilder._clientId = builder._clientId;
-        newBuilder._partitioner = builder._partitioner;
         return newBuilder;
     }
 
@@ -61,23 +59,7 @@ public final class JournalClientBuilder {
     }
 
     /**
-     * Partitioner to decide on how to partition the Keys.
-     * If none supplied default partition is used to partition the
-     * Data.
-     *
-     * @param partitioner
-     *
-     * @return client builder
-     */
-    public JournalClientBuilder partitioner(Partitioner partitioner) {
-        JournalClientBuilder newBuilder = newBuilder(this);
-        newBuilder._partitioner = partitioner;
-        return newBuilder;
-    }
-
-    /**
      * Build JournalClient client.
-     *
      * @return JournalClient client.
      */
     public JournalClientImpl build() {
@@ -85,35 +67,11 @@ public final class JournalClientBuilder {
     }
 
     JournalClientImpl buildClient() {
-        Preconditions.checkNotNull(_name, "No name provided.");
-        Preconditions.checkNotNull(_clientId, "No client id provided.");
-        JournalClientImpl clientImpl =
-                new JournalClientImpl(
-                        _name, _clientId);
-        return clientImpl;
+        return null;
     }
 
-    private class JournalClientImpl implements JournalClient {
+    private class JournalClientImpl {
         public JournalClientImpl(String name, String clientId) {
-
         }
-
-        public Token write(AtomicBatch<LogRecord> LogRecord) {
-            return null;
-        }
-
-        @Override
-        public AtomicBatch read() {
-            return null;
-        }
-
-        public String name() {
-            return null;
-        }
-
-        public void close() {
-
-        }
-
     }
 }

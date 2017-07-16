@@ -12,7 +12,8 @@ import java.util.*;
 
 
 /**
- * Created by rsingh13 on 5/31/17.
+ * Created by rsingh13
+ * Totally dependent on Cassandra Time based timestamp.
  */
 public class UUIDs {
 
